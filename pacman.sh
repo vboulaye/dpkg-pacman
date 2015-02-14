@@ -1,4 +1,5 @@
-
+#!/bin/bash
+#
 set -o nounset
 
 
@@ -144,7 +145,9 @@ search()
 
 main()
 {
-    case "$1" in 
+    [ "$#" -lt "2" ] &&  exit 1
+    COMMAND="$1"
+    case "$COMMAND" in 
 	search)
 	    search $2
 	    ;;
